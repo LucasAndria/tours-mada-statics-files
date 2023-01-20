@@ -12,6 +12,9 @@ const userRouter = require("./routes/userRoutes");
 
 const app = express();
 
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
+
 const limiter = rateLimit({
   max: 100,
   windowMs: 60 * 60 * 1000,
@@ -26,8 +29,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json({ limit: "10kb" }));
 app.use(cookieParser());
 
-// Data sanitization against XSS
-app.use(xss());
+// // Data sanitization against XSS
+// app.use(xss());
 
 app.get("/", (req, res) => {
   res.status(200).json({
