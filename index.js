@@ -13,7 +13,10 @@ const userRouter = require("./routes/userRoutes");
 
 const app = express();
 
-app.use(cors({origin: 'http://localhost:8000'}));
+
+app.use(cors({
+  origin: ['http://localhost:8000', 'https://tours-mada.deta.dev']
+}));
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
