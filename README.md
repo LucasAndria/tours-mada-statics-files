@@ -1,5 +1,5 @@
 # tours-mada-statics-files
-This is a simple express server that can serve static files.
+This is a simple express server that can serve static files. Used for this webapp https://tours-mada.deta.dev/.
 
 ## To create your own
 if you want to setup you own server for static files.
